@@ -1,19 +1,20 @@
 name: Deploy to GitHub Pages
- 
+
 on:
   push:
     branches:
-      - main  
- 
+      - main  # Change this to the branch you want to deploy from
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Check out the repository
         uses: actions/checkout@v2
- 
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Responsive-Webpage
+          publish_dir: ./Responsive Website  # Make sure the path matches your folder structure
